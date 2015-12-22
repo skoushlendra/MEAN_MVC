@@ -11,9 +11,10 @@ var db = mongoose(),
 	passport = passport();
 
 //app.listen((process.env. || 5000));
+console.log("process.env.PORT: "+process.env.PORT);
 app.listen(process.env.PORT || 5000, function(){
-   var host = server.address().address;
-   var port = server.address().port;
+   var host = app.address().address;
+   var port = app.address().port;
    console.log('Listening on http://%s:%s', host, port);
 });
 
