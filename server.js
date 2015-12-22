@@ -10,7 +10,12 @@ var db = mongoose(),
 	app = express(),
 	passport = passport();
 
-app.listen(config.port);
+//app.listen((process.env. || 5000));
+app.listen(process.env.PORT || 5000, function(){
+   var host = server.address().address;
+   var port = server.address().port;
+   console.log('Listening on http://%s:%s', host, port);
+});
 
 module.exports = app;
 console.log("skoushlendra");
